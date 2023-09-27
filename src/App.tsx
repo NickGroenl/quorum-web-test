@@ -21,7 +21,12 @@ import VotationsHub from "./routes/hub/ votations";
 import PricingHub from "./routes/pricing";
 import ConfigurationsUser from "./routes/hub/Configuration/userconfig";
 import StaffCard from "./components/card-staff/StaticCard";
+
+
+
 import Staff from "./routes/staff";
+import ViewVotation from "./routes/hub/ votations/view";
+
 const App = () =>  {
   const dispatch = useAppDispatch();
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -48,16 +53,17 @@ const App = () =>  {
               //HUB
               <Route path="/hub" element={<HomeHub/>}/>
               <Route path="/votations" element={<VotationsHub/>}/>
+              <Route path="/votations-view" element={<ViewVotation/>}/>
 
               //Cards
 
               <Route path="/pricing" element={<PricingHub/>}/>
 
-              //Configuration
+              //Configuration//
 
               <Route  path="/configuration" element= {<ConfigurationsUser/>}/>
               
-                <Route path="/staff" element={<Staff/>}/>
+              <Route path="/staff" element={<Staff/>}/>
             </Routes>
         </Router>
         : <></>}
